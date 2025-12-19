@@ -1,0 +1,697 @@
+body {
+  
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #fbfcfd;
+  color: #1F2937;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background: linear-gradient(90deg, #13fa03, #08f3e7);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  height: 80px;
+  
+  
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+nav a {
+  position: relative;
+  padding: 5px 10px;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #0D6EFD;
+  transition: 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+
+.logo {
+  display: flex;
+  align-items: center;
+  animation: scroll 15s linear infinite;
+}
+
+
+.logo img {
+  width: 300px;     
+  height: auto;
+}
+
+
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #1F2937;
+  font-weight: 500;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  padding: 80px;
+}
+
+.hero-text h1 {
+  font-size: 48px;
+}
+
+.hero-text span {
+  color: #20C997;
+}
+
+.hero-img img {
+  width: 650px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;   /* centers cards horizontally */
+  gap: 35px;
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+#internimage {
+    width: 500px;
+    height: auto;
+    margin-right: 50px;
+}
+
+.card {
+  background: linear-gradient(135deg, #ffffff, #f0f7ff);
+  width: 260px;
+  padding: 30px 25px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(13,110,253,0.15);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+/* glowing border effect */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 2px;
+  background: linear-gradient(120deg, #0D6EFD, #20C997);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box,
+                linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.card h3 {
+  color: #0D6EFD;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.card p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #374151;
+}
+
+/* hover animation */
+.card:hover {
+  transform: translateY(-15px) scale(1.05);
+  box-shadow: 0 30px 70px rgba(13,110,253,0.35);
+}
+
+
+footer {
+  text-align: center;
+  padding: 40px;
+  background: #0D6EFD;
+  color: white;
+}
+
+.offer {
+  text-align: center;
+  padding: 80px 60px;
+}
+
+.offer h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #0D6EFD;
+}
+
+.about{
+    text-align: center;
+    
+}
+
+.about h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #0D6EFD;
+}
+
+
+/* ================= CONTACT PAGE ================= */
+
+.contact {
+  max-width: 1100px;
+  margin: 80px auto;
+  padding: 60px;
+  background: linear-gradient(135deg, #313539, #a0cdfa);
+  border-radius: 25px;
+  box-shadow: 0 30px 80px rgba(13, 110, 253, 0.15);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* soft background glow */
+.contact::before {
+  content: "";
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, #0D6EFD33, transparent);
+  top: -120px;
+  right: -120px;
+}
+#color {
+  color: rgb(10, 1, 1);
+}
+
+.contact-form {
+  position: relative;
+  z-index: 1;
+  border: #42f472;
+}
+.contact h2 {
+  font-size: 42px;
+  color: #0D6EFD;
+  margin-bottom: 10px;
+}
+
+.contact p {
+  color: #4B5563;
+  font-size: 16px;
+  margin-bottom: 35px;
+}
+
+/* FORM STYLING */
+.contact form {
+  max-width: 520px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact input,
+.contact textarea {
+  padding: 15px 18px;
+  border-radius: 12px;
+  border: 1px solid #D1E3FF;
+  font-size: 15px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.contact textarea {
+  min-height: 120px;
+  resize: none;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+  border-color: #0D6EFD;
+  box-shadow: 0 0 0 4px rgba(13,110,253,0.15);
+}
+
+/* BUTTON */
+.contact button {
+  margin-top: 10px;
+  padding: 15px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #0D6EFD, #20C997);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 50px rgba(13,110,253,0.35);
+}
+
+/* EMAIL TEXT */
+.contact p:last-child {
+  margin-top: 30px;
+  font-weight: 500;
+  color: #1F2937;
+}
+
+/*about page css*/
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+
+/* ABOUT HERO */
+.about-hero {
+  display: flex;
+  align-items: center;
+  padding: 80px 60px;
+  gap: 50px;
+  animation: fadeIn 1.2s ease-in;
+}
+
+.about-text h1 {
+  font-size: 38px;
+  color: #0d6efd;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  margin-bottom: 15px;
+  font-size: 17px;
+}
+
+.about-image img {
+  width: 420px;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* VISION & MISSION */
+.vision-mission {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap: 30px;
+  padding: 60px;
+}
+
+.card-box {
+  background: rgb(8, 243, 79);
+  padding: 30px;
+  border-radius: 25px;
+  border-color: #081c3a;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.card-box:hover {
+  transform: translateY(-10px);
+}
+
+.card-box h2 {
+  color: #0d6efd;
+  margin-bottom: 15px;
+}
+
+.card-box ul {
+  list-style: none;
+}
+
+.card-box ul li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+/* WHAT WE OFFER */
+.what-offer {
+  padding: 70px 60px;
+  text-align: center;
+}
+
+.what-offer h2 {
+  font-size: 32px;
+  color: #0d6efd;
+}
+
+.subtitle {
+  color: gray;
+  margin-bottom: 25px;
+}
+
+.offer-list p {
+  font-size: 17px;
+  margin: 10px 0;
+}
+
+.closing-text {
+  margin-top: 25px;
+  font-size: 16px;
+}
+
+/* INDUSTRY */
+.industry {
+  background: #4febf9;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.industry h2 {
+  margin-bottom: 10px;
+}
+
+/* FOOTER */
+footer {
+  background: #081c3a;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* RESPONSIVE */
+@media(max-width: 900px) {
+  .about-hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-image img {
+    width: 300px;
+  }
+}
+
+/* END OF carrers  PAGE CSS */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+
+
+.active {
+  color: #0d6efd;
+}
+
+/* HERO */
+.career-hero {
+  display: flex;
+  align-items: center;
+  padding: 80px 60px;
+}
+
+#careersimage{
+  width: 450px;
+}
+
+.career-text h1 {
+  font-size: 42px;
+  color: #0d6efd;
+}
+
+.career-text p {
+  margin: 15px 0;
+}
+
+.btn-primary {
+  background: #0d6efd;
+  color: white;
+  padding: 15px 32px;
+  border-radius: 30px;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  margin-top: 20px;
+
+}
+
+/* OPENINGS */
+.openings {
+  padding: 60px;
+}
+
+.opening-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 25px;
+  border:#081c3a;
+}
+
+#h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.opening-card {
+  background: rgb(9, 251, 251);
+  padding: 25px;
+  border-radius: 15px;
+  transition: 0.3s;
+  border:#0a3576;
+}
+
+.opening-card:hover {
+  transform: translateY(-10px);
+}
+
+.opening-card a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #0d6efd;
+}
+
+/* WHY JOIN */
+.why-join {
+  padding: 70px;
+  text-align: center;
+}
+
+.why-grid {
+  
+  color: #08f13e;
+  display: grid;
+  
+  gap: 25px;
+}
+
+.why-card {
+  background-color: #0D6EFD;
+  padding: 50px;
+  border-radius: 30px;
+  border:#0a61e3;
+  transition: 0.3s;
+}
+
+/* INTERNSHIPS */
+.internships {
+  padding: 80px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.intern-card {
+  background: rgb(218, 203, 239);
+  padding: 25px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.actions button {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 20px;
+}
+
+.apply {
+  background: #0d6efd;
+  color: white;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+
+
+
+/* SERVICES */
+.services {
+  padding: 60px 8%;
+  text-align: center;
+}
+
+.services h1 {
+  font-size: 40px;
+  margin-bottom: 50px;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  padding: 60px 40px;
+  text-align: center;
+  background: #f6faff;
+  
+}
+
+
+/* WHY */
+.why {
+  
+  padding: 60px 8%;
+  text-align: center;
+  border: #081c3a;
+      
+  
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.why-card {
+  padding: 20px;
+  background: #f4f9ff;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* TESTIMONIALS */
+.testimonials {
+  padding: 60px 8%;
+  text-align: center;
+}
+
+.testimonial-card {
+  background: #fff;
+  padding: 25px;
+  margin: 20px auto;
+  max-width: 600px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.08);
+  background: #9bb8de;
+}
+
+.testimonial-card img {
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+/* FAQ */
+.faq {
+  background: #fff;
+  padding: 60px 8%;
+}
+
+.faq h2 {
+  margin-bottom: 20px;
+}
+
+/* FOOTER */
+footer {
+  background: #1e88e5;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+}
+
+/* ANIMATION */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#save{
+  width:100%;
+}
+
+.bluecolor
+{
+   color: #0D6EFD;
+   text-align: center;
+  margin-bottom: 40px;
+
+}
+
+.line {
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+  border-radius: 5px;
+  }
+  
+  .line::before {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scroll 15s linear infinite;
+    content: "---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------";
+  }
